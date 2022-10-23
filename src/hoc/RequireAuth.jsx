@@ -1,9 +1,9 @@
-import React, { useContext } from "react";
+import React from "react";
 import { Navigate, useLocation } from "react-router-dom";
-import { AuthContext } from "../context/AuthContext";
+import { useSelector } from "react-redux";
 
 const RequireAuth = ({ children }) => {
-  const { isAuth } = useContext(AuthContext);
+  const isAuth = useSelector((store) => store.auth.isAuth);
   const { pathname } = useLocation();
 
   if (isAuth) {

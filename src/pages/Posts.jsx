@@ -1,13 +1,13 @@
-import React, { useState, useEffect } from "react";
-import axios from "axios";
+import React, { useEffect } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { getPosts } from "../redux/post/post.actions";
 
 const Posts = () => {
-  const [posts, setPosts] = useState([]);
+  const posts = useSelector((store) => store.post.posts);
+  const dispatch = useDispatch();
 
   useEffect(() => {
-    axios.get("http://localhost:8080/posts").then((d) => {
-      setPosts(d.data);
-    });
+    dispatch(getPosts());
   }, []);
   return (
     <div>

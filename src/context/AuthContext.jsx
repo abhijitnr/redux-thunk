@@ -1,12 +1,14 @@
 import axios from "axios";
 import React, { createContext, useState } from "react";
 import { useEffect } from "react";
+// import { useSelector } from "react-redux";
 import { useLocation, useNavigate } from "react-router-dom";
 
 export const AuthContext = createContext();
 
 export const AuthProvider = ({ children }) => {
   const [isAuth, setIsAuth] = useState(false);
+  // const { isAuth } = useSelector((store) => store.auth.isAuth);
   const navigate = useNavigate();
   const { state } = useLocation();
   const login = (creds) => {

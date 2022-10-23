@@ -1,13 +1,14 @@
-import React, { useEffect, useState } from "react";
-import axios from "axios";
+import React, { useEffect } from "react";
+import { getFeeds } from "../redux/feed/feed.actions";
+import { useSelector, useDispatch } from "react-redux";
 
 const Feeds = () => {
-  const [feeds, setFeeds] = useState([]);
+  // const [feeds, setFeeds] = useState([]);
+  const feeds = useSelector((store) => store.feed.feeds);
+  const dispatch = useDispatch();
 
   useEffect(() => {
-    axios.get("http://localhost:8080/feeds").then((d) => {
-      setFeeds(d.data);
-    });
+    dispatch(getFeeds());
   }, []);
   return (
     <div>
