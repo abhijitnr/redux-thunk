@@ -7,7 +7,6 @@ import Login from "./pages/Login";
 import Feeds from "./pages/Feeds";
 import Careers from "./pages/Careers";
 import Posts from "./pages/Posts";
-import "./App.css";
 
 function App() {
   return (

@@ -8,6 +8,7 @@
 ### To start Server run followig command
 
 - `json-server --watch db.json --port 8080`
+- `npx json-server --watch db.json --port 8080` ( if 1st command not working )
 
 ## Note:
 
